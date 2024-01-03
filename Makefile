@@ -11,11 +11,6 @@ endif
 install-docker:
 	bash ./scripts/install-docker.bash
 
-.PHONY: install-acme
-install-acme:
-	curl https://get.acme.sh | sh -s email=dmitry@ankr.com || true
-	bash ./scripts/issue-cert.bash
-
 .PHONY: create-genesis
 create-genesis: check-env
 	bash ./scripts/create-genesis.bash
